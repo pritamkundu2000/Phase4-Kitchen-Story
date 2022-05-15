@@ -1,0 +1,63 @@
+<app-header></app-header>
+<br />
+<body>
+<div class="container">
+       <p>&nbsp;</p>
+       <p>Login Here!!!</p>
+<div class="card">
+<div class="card-body">
+  <form novalidate (ngSubmit)="save(logForm)" #logForm="ngForm">
+    <div class="container">
+<div class="form-group row mb-6">
+  <label class="col-md-2 col-form-label" for="emailId">Email:</label>
+  <div class="col-md-8">
+    <input type="text" required 
+                id="emailId"  
+                name="email" 
+                [(ngModel)]=login.email 
+                #email="ngModel"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                [ngClass]="{'is-invalid':(email.touched||email.dirty)&&!email.valid}"/>
+
+                <span class="invalid-feedback">
+                  <span *ngIf=email.errors?.required>
+                      Email is required
+                  </span>
+
+                  <span *ngIf=email.errors?.pattern>
+                      please enter valid email format
+                  </span>
+              </span>
+          </div>            
+      </div>
+<div class="form-group row mb-2">
+  <label class="col-md-2 col-form-label" for="passwordId">Password:</label>
+  <div class="col-md-8">
+    <input type="password" required id="passwordId" minlength="8" name="password" [(ngModel)]=login.password #passwordVar="ngModel" 
+    [ngClass]="{'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }"/>
+  <span class="invalid-feedback">
+    <span *ngIf=passwordVar.errors?.required>
+      The password should be entered....
+    </span>
+    <span *ngIf=passwordVar.errors?.minlength>
+      The password should be atleast 8 characters long....
+    </span>
+  </span>
+  </div>
+</div>
+<button class="btn btn-success" type="submit" [disabled]="!logForm.valid" >Submit</button>
+</div>
+
+</form>
+
+</div>
+
+</div>
+<br>
+<p> If you are a new user
+  <a [routerLink]="['/register']">Regiter Here</a></p>
+  
+  <br>
+</div>
+</body>
+<app-footer></app-footer>

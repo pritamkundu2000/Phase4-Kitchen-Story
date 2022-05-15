@@ -1,0 +1,89 @@
+<app-header></app-header>
+<br />
+<body>
+<div class="container">
+  <p>&nbsp;</p>
+      <p> Register Here!!!</p>
+ <div class="card">
+<div class="card-body">
+  <form novalidate (ngSubmit)="save(regForm)" #regForm="ngForm">
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="firstnameId">FirstName:</label>
+      <div class="col-md-8">
+        <input type="text" required id="firstnameId" minlength="4" name="firstName" [(ngModel)]=register.firstName #firstNameVar="ngModel" 
+        [ngClass]="{'is-invalid':(firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid }"/>
+      <span class="invalid-feedback">
+        <span *ngIf=firstNameVar.errors?.required>
+          The firstName should be entered....
+        </span>
+        <span *ngIf=firstNameVar.errors?.minlength>
+          The firstName should be atleast 4 characters long....
+        </span>
+      </span>
+      </div>
+    </div>
+<div class="form-group row mb-2">
+  <label class="col-md-2 col-form-label" for="firstnameId">LastName:</label>
+  <div class="col-md-8">
+    <input type="text" required id="lastnameId" minlength="4" name="lastName" [(ngModel)]=register.lastName #lastNameVar="ngModel" 
+    [ngClass]="{'is-invalid':(lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid }"/>
+  <span class="invalid-feedback">
+    <span *ngIf=lastNameVar.errors?.required>
+      The LastName should be entered....
+    </span>
+    <span *ngIf=lastNameVar.errors?.minlength>
+      The lastName should be atleast 4 characters long....
+    </span>
+  </span>
+  </div>
+</div>
+<div class="form-group row mb-2">
+  <label class="col-md-2 col-form-label" for="emailId">Email:</label>
+  <div class="col-md-8">
+    <input type="text" required 
+                id="emailId"  
+                name="email" 
+                [(ngModel)]=register.email 
+                #email="ngModel"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                [ngClass]="{'is-invalid':(email.touched||email.dirty)&&!email.valid}"/>
+
+                <span class="invalid-feedback">
+                  <span *ngIf=email.errors?.required>
+                      Email is required
+                  </span>
+
+                  <span *ngIf=email.errors?.pattern>
+                      please enter valid email format
+                  </span>
+              </span>
+          </div>            
+      </div>
+<div class="form-group row mb-2">
+  <label class="col-md-2 col-form-label" for="passwordId">SetPassword:</label>
+  <div class="col-md-8">
+    <input type="password" required id="passwordId" minlength="8" name="password" [(ngModel)]=register.password #passwordVar="ngModel" 
+    [ngClass]="{'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }"/>
+  <span class="invalid-feedback">
+    <span *ngIf=passwordVar.errors?.required>
+      The password should be entered....
+    </span>
+    <span *ngIf=passwordVar.errors?.minlength>
+      The password should be atleast 8 characters long....
+    </span>
+  </span>
+  </div>
+</div>
+<button class="btn btn-success" type="submit" [disabled]="!regForm.valid" [routerLink]="['/login']">Submit</button>
+</form>
+</div>
+</div>
+<br>
+<p> If Already registered 
+  <a [routerLink]="['/login']">Get Loggedin</a></p>
+  
+  <br>
+</div>
+</body>
+
+ <app-footer></app-footer>

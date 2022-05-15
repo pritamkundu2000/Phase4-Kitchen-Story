@@ -1,0 +1,47 @@
+h3
+{
+    font-family:tangerine;
+    color:goldenrod;
+    font-size: 50px;
+}
+h5{
+    font-family: tangerine;
+    color:indianred;
+    font-size:50px;
+}
+.center
+{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 1000px;
+}
+.cart_icon
+{
+    position: relative;
+}
+.cart_icon i{
+    font-size: 24px;
+}
+.cart_value
+{
+    position: absolute;
+    top:-16px;
+    right: -32px;;
+    background-color: white;
+    border:1pxs solid black;
+    border-radius: 50%;
+    padding:4px 10px;
+    font-weight: 800;
+    font-size: 16px;
+}
+p{
+    font-style: verdana;
+    font-size: 20px;
+}
+.nav-link{
+    font-style: verdana;
+    font-size: 20px;
+}
+
+

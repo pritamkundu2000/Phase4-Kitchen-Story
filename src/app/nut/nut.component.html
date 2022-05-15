@@ -1,0 +1,39 @@
+<app-nheader></app-nheader>
+<div class="container">
+  <div class="d-grid gap-2 d-md-flex ">
+    
+    &nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/fruit']" class="nav" role="button">Fruits</a>&nbsp;&nbsp;
+  <a [routerLink]="['/cere']" class="nav" role="button">Cereals</a>&nbsp;&nbsp;
+  <a [routerLink]="['/nut']" class="nav" role="button">Nuts</a><a></a>&nbsp;&nbsp;
+  </div>
+  </div>
+<div class="container" style="margin-top:20px;">
+  <input class="form-control me-3" type="search" placeholder="Search here" [(ngModel)]="searchterm" aria-label="Search" color="green">
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="container" style="margin-top:20px;">
+<div class="row card-group">
+<div *ngFor='let f of searchedItems' class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 17rem;">
+<div class="card mt-4 " >
+  <img [src]='f.Img'  class="card-img-top" [width]=imgWidth1 [height]=imgHeight1 >
+  <div class="card-body">
+    <h5 class="card-title">{{f.Name}}</h5>
+    <p class="card-text">Cost:{{f.Cost|currency:"INR"}}<br>Rating:{{f.Rating}}
+    </p>
+    <div class="content">
+       <button type="button" class="btn1" (click)="inc(f)"><i class="fa fa-plus"></i></button>
+       <span>{{f.qnt}}</span>
+       <button type="button" class="btn1" (click)="dec(f)"><i class="fa fa-minus"></i></button>
+      </div>
+      <a  class="btn btn-primary"  (click)="add(f)">Add to Cart</a>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

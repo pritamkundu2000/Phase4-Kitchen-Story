@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+}
+.btn
+{
+    text-decoration-color: azure;
+}
+.cart_icon i{
+    position: absolute;
+    top:100px;
+    right: 600px;;
+    background-color: white;
+    border:1pxs solid black;
+    border-radius: 50%;
+    padding:4px 10px;
+    font-weight: 800;
+    font-size: 200px;
+}
+p{
+    font-style: verdana;
+}
+.cart_icon p{
+    position: absolute;
+    top:350px;
+    right: 600px;;
+    background-color: white;
+    border:1pxs solid black;
+    border-radius: 50%;
+    padding:4px 10px;
+    font-weight: 800;
+    font-size: 50px;
+}

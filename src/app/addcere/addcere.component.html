@@ -1,0 +1,34 @@
+<div align="right">
+    <a [routerLink]="['../home']" class="btn btn-info" style="margin:12px;">Logout</a>
+    </div>
+<div class='btn'>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a [routerLink]="['../adpwd']" class="btn btn-info" style="margin:12px;">Change password</a>
+    <a [routerLink]="['../addcere']" class="btn btn-info" style="margin:12px;">To view and change Cereals</a>
+    <a [routerLink]="['../addfruits']" class="btn btn-info" style="margin:12px;">To view and change Fruits</a>
+    <a [routerLink]="['../addnuts']" class="btn btn-info" style="margin:12px;">To view and change Nuts</a>
+</div>
+<div class='btn'>
+    <a [routerLink]="['../addic']" class="btn btn-info" style="margin:12px;">Add</a>
+</div>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr class="a">
+                <th>Grocery</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let mov of vtbl'>
+                        <img [src]='mov.Img' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                <td>{{mov.Name}}</td>
+                <td>{{mov.Cost}}</td>
+    <td><button class="btn btn-info" (click)="onDelete(mov.Name)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

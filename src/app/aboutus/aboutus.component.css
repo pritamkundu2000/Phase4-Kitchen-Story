@@ -1,0 +1,16 @@
+.right
+{   top:auto;
+    right: 16px;
+    color: cyan;
+}
+.centered {
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
+  p{
+      font-style: verdana;
+      font-size: 25px;
+      color:seashell;
+  }
